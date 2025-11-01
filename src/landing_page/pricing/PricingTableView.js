@@ -21,6 +21,8 @@ function PricingTableView({ columns, rows }) {
                     ))}
                 </tbody>
             </table>
+
+            <h2 className='m-5'> <a href='https://zerodha.com/brokerage-calculator'> Calculate your costs upfront</a> using our brokerage calculator </h2>
         </div>
     );
 }

@@ -6,16 +6,20 @@ import AccountTypes from './AccountTypes';
 import InvestmentOptions from './InvestmentOptions';
 import FAQSection from './FAQSection';
 import SignupCTA from './SignupCTA';
+import OpenAccount from '../OpenAccount';
 function SignupPage() {
     return (
         <>
             <HeroBanner />
+             <SignupCTA />
             <InvestmentOptions />
             <AccountSteps />
             <AccountBenifits />
             <AccountTypes />
             <FAQSection />
-            <SignupCTA />
+            <OpenAccount/>
+
+           
 
         </>
     );
