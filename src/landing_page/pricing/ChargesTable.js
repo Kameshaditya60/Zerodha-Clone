@@ -7,8 +7,8 @@ function ChargesTable({tableTitle, columns, rows}) {
                 <table className='table table-bordered'>
                     <thead className='table-light'>
                         <tr>
-                            {columns.map((col, index) => (
-                                <th key={index} className='text-start'>{col}</th>
+                            {columns.map((column, index) => (
+                                <th key={index} className='text-start'>{column}</th>
                             ))}
                         </tr>
                     </thead>

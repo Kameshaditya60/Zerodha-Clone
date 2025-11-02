@@ -1,13 +1,11 @@
 import React from 'react';
 import SupportSearchBar from './SupportSearchBar';
-import SupportQuickLinks from './SupportQuickLinks';
-import SupportCategories from './SupportCategories';
+import SupportSection from './SupportSection';
 function SupportPage() {
     return (
         <>
             <SupportSearchBar />
-            <SupportQuickLinks />
-            <SupportCategories />
+            <SupportSection/>
         </>
     );
 }
