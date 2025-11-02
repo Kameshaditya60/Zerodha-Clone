@@ -1,7 +1,7 @@
 import React from "react";
 function SupportCategories() {
   return (
-    <div className="container accordion ">
+    <div className="container" id="accordion">
       <div className="card">
         <div className="card-header d-flex" id="heading">
           <i className="fa-solid fa-circle-plus fa-xl pt-3 "></i>
@@ -17,7 +17,12 @@ function SupportCategories() {
             </button>
           </h5>
         </div>
-        <div className="collapse" id="collapseExample">
+        <div
+          id="collapseExample"
+          className="collapse show"
+          aria-labelledby="heading"
+          data-bs-parent="#accordion"
+        >
           <div className="card card-body">
             <ol>
               <li>Resident individual</li>
@@ -25,7 +30,7 @@ function SupportCategories() {
               <li>Non Resident Indian (NRI)</li>
               <li>Company, Partnership, HUF and LLP</li>
               <li>Glossary</li>
-              <li>Your new item here</li> {/* Added new list item */}
+              <li>Your new item here</li>
             </ol>
           </div>
         </div>
@@ -36,17 +41,16 @@ function SupportCategories() {
           <i className="fa-regular fa-circle-user fa-xl pt-3"></i>
           <h5 className="mb-0">
             <button
-              className="btn"
+              className="btn  d-inline"
               data-bs-toggle="collapse"
               data-bs-target="#collapseOne"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-controls="collapseOne"
             >
               Your Zerodha Account
             </button>
           </h5>
         </div>
-
         <div
           id="collapseOne"
           className="collapse show"
@@ -76,7 +80,7 @@ function SupportCategories() {
               className="btn"
               data-bs-toggle="collapse"
               data-bs-target="#collapseTwo"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-controls="collapseTwo"
             >
               Kite
@@ -111,7 +115,7 @@ function SupportCategories() {
               className="btn"
               data-bs-toggle="collapse"
               data-bs-target="#collapseThree"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-controls="collapseThree"
             >
               Funds
@@ -138,13 +142,13 @@ function SupportCategories() {
 
       <div className="card">
         <div className="card-header d-flex" id="headingFour">
-         <i class="fa-brands fa-edge fa-xl pt-3"></i>
+          <i class="fa-brands fa-edge fa-xl pt-3"></i>
           <h5 className="mb-0">
             <button
               className="btn"
               data-bs-toggle="collapse"
               data-bs-target="#collapseFour"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-controls="collapseFour"
             >
               Console
@@ -169,27 +173,27 @@ function SupportCategories() {
         </div>
       </div>
 
-
-      
       <div className="card">
-        <div className="card-header d-flex" id="headingFour">
-         <i class="fa-brands fa-edge fa-xl pt-3"></i>
+        <div className="card-header d-flex" id="headingFive">
+          <i class="fa-brands fa-edge fa-xl pt-3"></i>
           <h5 className="mb-0">
             <button
               className="btn"
               data-bs-toggle="collapse"
-              data-bs-target="#collapseFour"
-              aria-expanded="true"
-              aria-controls="collapseFour"
-            > Coin
+              data-bs-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              {" "}
+              Coin
             </button>
           </h5>
         </div>
 
         <div
-          id="collapseFour"
+          id="collapseFive"
           className="collapse show"
-          aria-labelledby="headingFour"
+          aria-labelledby="headingFive"
           data-bs-parent="#accordion"
         >
           <div className="card-body">
@@ -202,7 +206,6 @@ function SupportCategories() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }
