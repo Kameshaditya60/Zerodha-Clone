@@ -1,0 +1,38 @@
+.steps-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    padding: 10px;
+    
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    /* background-color: #387ed1; */
+    color: rgb(0, 0, 0);
+    border: 1px solid #387ed1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.step-text {
+    font-size: 1.1rem;
+    color: #424242;
+}
+
+hr {
+    margin: 0;
+    border-color: #8d8c8c;
+
+}

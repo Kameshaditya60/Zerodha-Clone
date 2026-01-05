@@ -1,0 +1,4 @@
+/* Add spacing between list items in footer columns */
+.footer .col-3 ul li {
+  margin-bottom: 0.5rem; /* adjust value as needed (e.g. 0.75rem) */
+}
