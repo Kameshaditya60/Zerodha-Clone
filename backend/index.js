@@ -15,69 +15,26 @@ const axios = require('axios');
 
 const app = express();
 
-// app.get ('/addholdings', async (req, res) => {
-//     let tempHoldings = require('../dashboard/src/data/data').holdings;
-//     tempHoldings.forEach((item) => {
-//         let newHolding = new HoldingsModel({
-//             name: item.name,
-//             quantity: item.quantity,
-//             averagePrice: item.averagePrice,
-//             currentPrice: item.currentPrice,
-//             net: item.net,
-//             day: item.day,
-//         });
-//         newHolding.save();
-//     });
-//     res.send('Holdings added');
-// });
-// app.get('/addpositions', async (req, res) => {
-//     let tempPositions = require('../dashboard/src/data/data').positions;
-//     tempPositions.forEach((item) => {
-//         let newPosition = new PositionsModel({
-//             name: item.name,
-//             quantity: item.quantity,
-//             averagePrice: item.averagePrice,
-//             currentPrice: item.currentPrice,
-//             net: item.net,
-//             day: item.day,
-//             isLoss: item.isLoss,
-//         });
-//         newPosition.save();
-//     });
-//     res.send('Positions added');
-// });
-// app.get('/addorders', async (req, res) => {
-//     let tempOrders = require('../dashboard/src/data/data').orders;
-//     tempOrders.forEach((item) => {
-//         let newOrder = new OrdersModel({
-//             name: item.name,
-//             quantity: item.quantity,
-//             averagePrice: item.averagePrice,
-//             currentPrice: item.currentPrice,
-//             net: item.net,
-//             day: item.day,
-//             isLoss: item.isLoss,
-//         });
-//         newOrder.save();
-//     });
-//     res.send('Orders added');
-// });
-
 mongoose.connect(url)
   .then(() => console.log("MongoDB is  connected successfully"))
   .catch((err) => console.error(err));
 
+// CORS setup - SINGLE configuration
 app.use(cors({
-           origin: ["http://localhost:3000"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-    }));
+  origin: [
+    'https://zerodha-clone-frontend-iy2e.onrender.com',
+    'https://zerodha-clone-dashboard-qyr2.onrender.com',
+    'http://localhost:3000',  // local development
+    'http://localhost:5000'   // vite local
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use("/", authRoute);
-
 app.get('/allHoldings', async (req, res) => {
     let allholdings = await HoldingsModel.find({});
     res.json(allholdings);
@@ -98,26 +55,9 @@ app.post('/neworders', async (req, res) => {
 });
 app.get('/api', async (req, res) => {
   try {
-// //     const POPULAT_STOCKS = [
-// //   'RELIANCE.NS', 'TCS.NS', 'HDFCBANK.NS', 'INFY.NS', 'ICICIBANK.NS',
-// //   'TATAMOTORS.NS', 'ONGC.NS', 'NTPC.NS', 'POWERGRID.NS', 'ADANIGREEN.NS'
-// // ];
-
-//     const response = await axios.get(
-// // `https://military-jobye-haiqstudios-14f59639.koyeb.app/stock/list?symbols=${POPULAT_STOCKS}`,
-//     // `https://query1.finance.yahoo.com/v8/finance/chart/${POPULAT_STOCKS}`,
-//     `https://nse-api-khaki.vercel.app/stock/list?symbols=RELIANCE,TCS,INFY,HDFCBANK&res=num`,
-//      {
-//         headers: {
-//           'User-Agent': 'Mozilla/5.0',
-//         },
-//     });
-
-
  const symbols = ['RELIANCE','TCS','INFY','HDFCBANK','ICICIBANK','SBIN','BHARTIARTL','ITC','HINDUNILVR','LT'];
 const symbol = RELIANCE.NS; // Example symbol, replace with desired symbol
 const API_BASE_URL = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=1d`;
-//  const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=1d`;
     
     const response = await axios.get(API_BASE_URL,
         {
