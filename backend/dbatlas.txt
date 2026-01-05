@@ -1,0 +1,3 @@
+mongoDB Atal Cluster
+username = zerodhaclone
+pass= Kite@123
