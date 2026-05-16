@@ -184,58 +184,6 @@ const API_URL = process.env.REACT_APP_DASHBOARD_URL || 'http://localhost:3001';
   };
 
 
-  // Validate mobile number
-  // const validateMobile = (number) => {
-  //   if (!number) {
-  //     return "Mobile number is required";
-  //   }
-  //   if (number.length !== 10) {
-  //     return "Mobile number must be 10 digits";
-  //   }
-  //   if (!/^[6-9]\d{9}$/.test(number)) {
-  //     return "Please enter a valid Indian mobile number";
-  //   }
-  //   return null;
-  // };
-
-  // // Handle form submit
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   // Validate
-  //   const validationError = validateMobile(mobileNumber);
-  //   if (validationError) {
-  //     setError(validationError);
-  //     return;
-  //   }
-
-  //   setLoading(true);
-  //   setError("");
-  //   setSuccess("");
-
-  //   try {
-  //     // Call signup API
-  //     const response = await authAPI.signup(mobileNumber);
-
-  //     if (response.success) {
-  //       setSuccess("Signup successful! Redirecting...");
-  //       console.log("User created:", response.user);
-
-  //       // Redirect to dashboard after 2 seconds
-  //       setTimeout(() => {
-  //         window.location.href = `${API_URL}?auth=success&number=${mobileNumber}`;
-  //       }, 2000);
-  //     } else {
-  //       // Handle error message from backen
-  //       setError(response.message || "Signup failed");
-  //     }
-  //   } catch (err) {
-  //     console.error("Signup error:", err);
-  //     setError(err.message || "Something went wrong. Please try again.");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
   return (
     <div className="container text-center d-flex">
       <div className="my-5 col-6">
