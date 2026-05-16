@@ -13,6 +13,9 @@ function Navbar() {
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" className=''>
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
+                            <Link class="nav-link active" aria-current="page" to="/login">Login</Link>
+                        </li>
+                         <li class="nav-item">
                             <Link class="nav-link active" aria-current="page" to="/signup">Signup</Link>
                         </li>
                         <li class="nav-item">

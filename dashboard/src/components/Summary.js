@@ -1,10 +1,29 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+// import {GetUserService} from "../services/GetUserService";
+import { getUserProfile } from "../services/UserService";
 
 const Summary = () => {
+  const [user, setUser] = useState(null);
+
+  useEffect(()=> {
+    const userData = localStorage.getItem('user');
+    console.log('user ka data from localStorage',userData);
+    if (userData)
+    {
+      const parsedUser = JSON.parse(userData);
+      console.log('Parsed user:', parsedUser); // 👈 Ye bhi check karo
+    console.log('User name:', parsedUser.name); // 👈 Name mil raha?
+      setUser(parsedUser);
+    }
+    // getUserProfile()
+    // .then(data => setUser(data))
+    // .catch(err => console.error("Error fetching user:", err));
+  }, []);
+
   return (
     <>
       <div className="username">
-        <h6>Hi, User!</h6>
+        <h6>Hi,{user?.name || "Loading..."}!</h6>
         <hr className="divider" />
       </div>
 

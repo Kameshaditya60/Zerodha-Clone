@@ -68,34 +68,6 @@ const WatchList = () => {
 
   if (loading) return <div>Loading stocks...</div>;
 
-
-  // export const data = {
-  //   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-  // datasets: [
-  //   {
-  //     label: "# of Votes",
-  //     data: [12, 19, 3, 5, 2, 3],
-  //     backgroundColor: [
-  //       "rgba(255, 99, 132, 0.2)",
-  //       "rgba(54, 162, 235, 0.2)",
-  //       "rgba(255, 206, 86, 0.2)",
-  //       "rgba(75, 192, 192, 0.2)",
-  //       "rgba(153, 102, 255, 0.2)",
-  //       "rgba(255, 159, 64, 0.2)",
-  //     ],
-  //     borderColor: [
-  //       "rgba(255, 99, 132, 1)",
-  //       "rgba(54, 162, 235, 1)",
-  //       "rgba(255, 206, 86, 1)",
-  //       "rgba(75, 192, 192, 1)",
-  //       "rgba(153, 102, 255, 1)",
-  //       "rgba(255, 159, 64, 1)",
-  //     ],
-  //     borderWidth: 1,
-  //   },
-  // ],
-  // };
-
   return (
     <div className="watchlist-container">
       <div className="search-container">
@@ -116,8 +88,8 @@ const WatchList = () => {
             <th>Symbol</th>
             <th>Company</th>
             <th>Price</th>
-            <th>Change</th>
-            <th>%Change</th>
+            {/* <th>Change</th>
+            <th>%Change</th> */}
           </tr>
         </thead>
         <tbody>
@@ -126,12 +98,12 @@ const WatchList = () => {
               <td>{stock.symbol}</td>
               <td>{stock.name}</td>
               <td>₹{stock.price}</td>
-              <td className={stock.change > 0 ? 'positive' : 'negative'}>
+              {/* <td className={stock.change > 0 ? 'positive' : 'negative'}>
                 {stock.change > 0 ? '+' : ''}{stock.change}
-              </td>
-              <td className={stock.changePercent > 0 ? 'positive' : 'negative'}>
+              </td> */}
+              {/* <td className={stock.changePercent > 0 ? 'positive' : 'negative'}>
                 {stock.changePercent}%
-              </td>
+              </td> */}
             </tr>
           ))}
         </tbody>
@@ -139,6 +111,12 @@ const WatchList = () => {
     </div>
 
       <ul className="list">
+        {stocks.map((stock, index) => {
+          return <WatchListItem stock={stock} key={index} />;
+        })}
+      </ul>
+
+       <ul className="list">
         {watchlist.map((stock, index) => {
           return <WatchListItem stock={stock} key={index} />;
         })}

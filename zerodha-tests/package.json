@@ -1,0 +1,29 @@
+{
+  "name": "zerodha-clone-frontend-tests",
+  "version": "1.0.0",
+  "description": "Playwright E2E automation suite for Zerodha Clone",
+  "scripts": {
+    "test":           "playwright test",
+    "test:ui":        "playwright test --ui",
+    "test:headed":    "playwright test --headed",
+    "test:chromium":  "playwright test --project=chromium",
+    "test:firefox":   "playwright test --project=firefox",
+    "test:mobile":    "playwright test --project=mobile-chrome",
+    "test:auth":      "playwright test --project=auth-tests",
+    "test:debug":     "playwright test --debug",
+    "test:report":    "playwright show-report reports/html-report",
+    "test:smoke":     "playwright test --grep TC-NAV",
+    "test:a11y":      "playwright test --grep TC-A11Y",
+    "test:orders":    "playwright test tests/orders.spec.ts",
+    "test:holdings":  "playwright test tests/holdings-positions-funds.spec.ts",
+    "test:dashboard": "playwright test tests/dashboard.spec.ts",
+    "test:ci":        "CI=true playwright test",
+    "codegen":        "playwright codegen http://localhost:3000",
+    "setup:auth":     "playwright test tests/auth.setup.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.18",
+    "typescript": "^5.8.3"
+  }
+}

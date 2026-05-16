@@ -4,6 +4,26 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+#note-files
+operational-checklist.md
+CLAUDE.md
+API_ENDPOINTS.md
+nagin music note.txt
+
+# Claude Code local session config
+.claude/settings.local.json
+
+# Auto-generated SDKs (regenerable via `npx api install`)
+backend/.api/
+
+# Playwright test artifacts (regenerated on every run)
+zerodha-tests/reports/
+zerodha-tests/test-results/
+zerodha-tests/playwright-report/
+zerodha-tests/playwright/.auth/*
+!zerodha-tests/playwright/.auth/.gitkeep
+
+
 # Environment variables
 .env
 .env.local
