@@ -16,7 +16,7 @@ function SignupCTA() {
   const [success, setSuccess] = useState("");
     const [timer, setTimer] = useState(0);
 
-const API_URL = import.meta.env.DASHBOARD_URL || 'http://localhost:3001';
+const API_URL = process.env.REACT_APP_DASHBOARD_URL || 'http://localhost:3001';
 
 // Timer countdown
   useEffect(() => {

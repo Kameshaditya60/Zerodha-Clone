@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL = import.meta.env.BACKEND_URL || 'http://localhost:5000';
+const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
 export const authAPI = {
   // Signup with mobile number
