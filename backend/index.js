@@ -7,10 +7,10 @@ const cors = require('cors');
 const cookieParser = require("cookie-parser");
 
 // Import routes
-const holdingsRoute = require("./routes/holdings");
-const positionsRoute = require("./routes/positions");
-const ordersRoute = require("./routes/orders");
-const stocksRoute = require("./routes/stocks");
+const holdingsRoute = require("./Routes/holdings");
+const positionsRoute = require("./Routes/positions");
+const ordersRoute = require("./Routes/orders");
+const stocksRoute = require("./Routes/stocks");
 const auth = require('./Routes/auth');
 const userProfile = require("./Routes/userRoutes");
 
