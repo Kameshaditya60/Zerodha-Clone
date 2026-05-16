@@ -2,21 +2,6 @@ import axios from 'axios';
 const API_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
 export const authAPI = {
-  // Signup with mobile number
-  signup: async (number) => {
-    try {
-      const response = await axios.post(`${API_URL}/api/number-signup`, 
-        { number },
-        { withCredentials: true }  // For cookies
-      );
-      return response.data;
-    } catch (error) {
-      console.error('Signup error:', error);
-      throw error.response?.data || error.message;
-    }
-  },
-
-
   // Send OTP (if needed later)
   sendOTP: async (number) => {
     try {
