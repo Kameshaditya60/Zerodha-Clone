@@ -18,7 +18,8 @@ describe('Holdings Component', () => {
   test('calls API endpoint on component mount', () => {
     axios.get.mockResolvedValue({ data: [] });
     render(<Holdings />);
-    expect(axios.get).toHaveBeenCalledWith('http://localhost:5000/allHoldings');
+    // REACT_APP_BACKEND_URL is unset under Jest, so the fallback kicks in.
+    expect(axios.get).toHaveBeenCalledWith('http://localhost:5000/api/holdings');
   });
 
   // Test 3: Displays holdings count after fetching
