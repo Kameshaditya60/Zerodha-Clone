@@ -4,14 +4,16 @@ import { VerticalGraph } from "./VerticalGraph";
 
 // import { holdings } from "../data/data";
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+
 const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/allHoldings").then((res) => {
-      console.log(res.data);
-      setAllHoldings(res.data);
-    });
+    axios
+      .get(`${BACKEND_URL}/api/holdings`)
+      .then((res) => setAllHoldings(res.data))
+      .catch((err) => console.error("Error fetching holdings:", err));
   }, []);
 
   // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
